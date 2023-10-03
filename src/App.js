@@ -1,7 +1,8 @@
+import './assets/App.css'
 
 const App = () => {
   return (
-    <div>
+    <div className='container'>
       Hello
     </div>
   );

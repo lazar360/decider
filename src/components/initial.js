@@ -1,5 +1,6 @@
 import { useRef, useState, useContext } from "react";
 import { MyContext } from "../context";
+import { toast } from 'react-toastify';
 
 const Initial = () => {
 
@@ -17,7 +18,9 @@ const Initial = () => {
     const value = textInput.current.value;
 
     if (value.length >= 30) {
-      setShowError(true);
+      toast.error("Your question is too long", {
+        position:toast.POSITION.TOP_LEFT})
+      // setShowError(true);
       return false;
     }
     context.goTo(1);
@@ -41,7 +44,7 @@ const Initial = () => {
         </button>
       )}
 
-      {showError && <div className="error">The question is too long</div>}
+      {/* {showError && <div className="error">The question is too long</div>} */}
     </div>
   );
 };

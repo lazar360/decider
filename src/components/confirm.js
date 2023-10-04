@@ -1,12 +1,16 @@
+import { useContext } from "react";
+import { MyContext } from "../context";
 
 const Confirm = () => {
-    return (
-    
+
+  const context = useContext(MyContext);
+
+  return (    
     <div>
-      confirm
-  </div>
+      { context.state.question}
+    </div>
   );
   
-  };
+};
   
   export default Confirm;
